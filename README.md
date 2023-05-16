@@ -3,8 +3,8 @@
 
 # Kullandıklarım
 Table View
-Core Data
-UIKit
-Safari Servies
+<p> Core Data </p>
+<p> UIKit </p>
+<p> Safari Servies </p>
 
 # Ekran Videosu
