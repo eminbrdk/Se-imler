@@ -19,19 +19,21 @@ class SandiklarVC: UIViewController {
     }
     
     private func configureView() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = Constant.backgroundColor
         title = "Sandıklar"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "archivebox"), style: .done, target: self, action: #selector(buttonPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sandık Ekle", style: .done, target: self, action: #selector(buttonPressed))
     }
 
     private func configureTableView() {
         view.addSubview(tableView)
 
         tableView.frame = view.bounds
+        tableView.backgroundColor = Constant.backgroundColor
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 70
+        tableView.rowHeight = 60
+        tableView.separatorColor = .darkGray
         tableView.register(Sand_kCell.self, forCellReuseIdentifier: Sand_kCell.reuseID)
     }
 

@@ -24,7 +24,7 @@ class SandikVC: UIViewController {
     }
 
     private func configureView() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = Constant.backgroundColor
     }
     
     private func configureImages() {
@@ -76,11 +76,11 @@ class SandikVC: UIViewController {
             ])
         }
         
-        rteButton.configuration?.baseBackgroundColor = .systemRed
+        rteButton.configuration?.baseBackgroundColor = Constant.rteColor
         rteButton.setTitle("Recep Tayyip Erdoğan", for: .normal)
         rteButton.addTarget(self, action: #selector(rteButtonPressed), for: .touchUpInside)
         
-        kkButton.configuration?.baseBackgroundColor = .systemGreen
+        kkButton.configuration?.baseBackgroundColor = Constant.kkColor
         kkButton.setTitle("Kemal Kılıçtaroğlu", for: .normal)
         kkButton.addTarget(self, action: #selector(kkButtonPressed), for: .touchUpInside)
         
@@ -137,13 +137,13 @@ class SandikVC: UIViewController {
             ])
         }
         
-        rteCount.textColor = .systemRed
+        rteCount.textColor = Constant.rteColor
         rteCount.text = String(chest.rteCount)
-        kkCount.textColor = .systemGreen
+        kkCount.textColor = Constant.kkColor
         kkCount.text = String(chest.kkCount)
         
-        rtePercantage.textColor = .systemRed
-        kkPercantage.textColor = .systemGreen
+        rtePercantage.textColor = Constant.rteColor
+        kkPercantage.textColor = Constant.kkColor
         changePercantage()
         
         NSLayoutConstraint.activate([
@@ -172,7 +172,7 @@ class SandikVC: UIViewController {
     }
     
     @objc private func minusButtonPressed() {
-        let alert = UIAlertController(title: "Aday Eksilt", message: "Lütfen 1 sayı eksiltmek istediğiniz adayı seçin", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Oy Eksilt", message: "Lütfen 1 oy eksiltmek istediğiniz adayı seçin", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Recep Tayyip Erdoğan", style: .default, handler: { [weak self] _ in
             guard let self else { return }
             self.chest.rteCount -= 1

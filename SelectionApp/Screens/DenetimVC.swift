@@ -15,7 +15,7 @@ class DenetimVC: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Tutanak Sorgula", for: .normal)
         button.configuration = .filled()
-        button.configuration?.baseBackgroundColor = .systemPurple
+        button.configuration?.baseBackgroundColor = Constant.appColor
         button.configuration?.baseForegroundColor = .white
         button.configuration?.cornerStyle = .medium
         return button
@@ -26,7 +26,7 @@ class DenetimVC: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Sandık Takip Sistemi", for: .normal)
         button.configuration = .filled()
-        button.configuration?.baseBackgroundColor = .systemPurple
+        button.configuration?.baseBackgroundColor = Constant.appColor
         button.configuration?.baseForegroundColor = .white
         button.configuration?.cornerStyle = .medium
         return button
@@ -39,7 +39,7 @@ class DenetimVC: UIViewController {
     }
     
     private func configureView() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = Constant.backgroundColor
         title = "Sorgula"
     }
     
@@ -65,7 +65,7 @@ class DenetimVC: UIViewController {
     
     fileprivate func presentSafariVC(with url: URL) {
         let safariVC = SFSafariViewController(url: url)
-        safariVC.preferredControlTintColor = .systemPurple
+        safariVC.preferredControlTintColor = Constant.appColor
         present(safariVC, animated: true)
     }
 

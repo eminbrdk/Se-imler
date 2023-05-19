@@ -5,7 +5,7 @@ class Sand_kCell: UITableViewCell {
     static let reuseID = "SandıkCell"
     let chestName: UILabel = {
        let label = UILabel()
-        label.textColor = .label
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
@@ -28,7 +28,9 @@ class Sand_kCell: UITableViewCell {
     
     private func configure() {
         addSubview(chestName)
+        backgroundColor = .black
         selectionStyle = .none
+        
         
         NSLayoutConstraint.activate([
             chestName.centerYAnchor.constraint(equalTo: centerYAnchor),

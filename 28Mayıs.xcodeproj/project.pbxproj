@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83969E32A16373A00E77ACE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83969E22A16373A00E77ACE /* Constants.swift */; };
+		B83969E52A163C2D00E77ACE /* Ext+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83969E42A163C2D00E77ACE /* Ext+UIColor.swift */; };
+		B83969E72A163D9A00E77ACE /* NavigationAndTabBarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83969E62A163D9A00E77ACE /* NavigationAndTabBarHelper.swift */; };
 		B83C58302A13CBCE0077BAD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C582F2A13CBCE0077BAD8 /* AppDelegate.swift */; };
 		B83C58322A13CBCE0077BAD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58312A13CBCE0077BAD8 /* SceneDelegate.swift */; };
 		B83C583A2A13CBCE0077BAD8 /* SelectionApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B83C58382A13CBCE0077BAD8 /* SelectionApp.xcdatamodeld */; };
@@ -23,7 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B83C582C2A13CBCE0077BAD8 /* Selection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B83969E22A16373A00E77ACE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B83969E42A163C2D00E77ACE /* Ext+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIColor.swift"; sourceTree = "<group>"; };
+		B83969E62A163D9A00E77ACE /* NavigationAndTabBarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAndTabBarHelper.swift; sourceTree = "<group>"; };
+		B83C582C2A13CBCE0077BAD8 /* 28Mayıs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "28Mayıs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83C582F2A13CBCE0077BAD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B83C58312A13CBCE0077BAD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B83C58392A13CBCE0077BAD8 /* SelectionApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelectionApp.xcdatamodel; sourceTree = "<group>"; };
@@ -51,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B83969E12A16372B00E77ACE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B83969E22A16373A00E77ACE /* Constants.swift */,
+				B83969E62A163D9A00E77ACE /* NavigationAndTabBarHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B83C58232A13CBCE0077BAD8 = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +77,7 @@
 		B83C582D2A13CBCE0077BAD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B83C582C2A13CBCE0077BAD8 /* Selection.app */,
+				B83C582C2A13CBCE0077BAD8 /* 28Mayıs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,10 +85,11 @@
 		B83C582E2A13CBCE0077BAD8 /* SelectionApp */ = {
 			isa = PBXGroup;
 			children = (
+				B83969E12A16372B00E77ACE /* Utilities */,
+				B83C58592A142B490077BAD8 /* Extensions */,
 				B83C585C2A142B700077BAD8 /* Resources */,
 				B83C585B2A142B650077BAD8 /* Managers */,
 				B83C585A2A142B550077BAD8 /* Models */,
-				B83C58592A142B490077BAD8 /* Extensions */,
 				B83C58582A142B3A0077BAD8 /* CustomViews */,
 				B83C58572A142B2C0077BAD8 /* Screens */,
 				B83C58402A13CBD00077BAD8 /* Info.plist */,
@@ -104,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B83C584A2A13CC850077BAD8 /* Ext+UIView.swift */,
+				B83969E42A163C2D00E77ACE /* Ext+UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -139,9 +156,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B83C582B2A13CBCE0077BAD8 /* Selection */ = {
+		B83C582B2A13CBCE0077BAD8 /* 28Mayıs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B83C58432A13CBD00077BAD8 /* Build configuration list for PBXNativeTarget "Selection" */;
+			buildConfigurationList = B83C58432A13CBD00077BAD8 /* Build configuration list for PBXNativeTarget "28Mayıs" */;
 			buildPhases = (
 				B83C58282A13CBCE0077BAD8 /* Sources */,
 				B83C58292A13CBCE0077BAD8 /* Frameworks */,
@@ -151,9 +168,9 @@
 			);
 			dependencies = (
 			);
-			name = Selection;
+			name = "28Mayıs";
 			productName = SelectionApp;
-			productReference = B83C582C2A13CBCE0077BAD8 /* Selection.app */;
+			productReference = B83C582C2A13CBCE0077BAD8 /* 28Mayıs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B83C58272A13CBCE0077BAD8 /* Build configuration list for PBXProject "Selection" */;
+			buildConfigurationList = B83C58272A13CBCE0077BAD8 /* Build configuration list for PBXProject "28Mayıs" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -184,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B83C582B2A13CBCE0077BAD8 /* Selection */,
+				B83C582B2A13CBCE0077BAD8 /* 28Mayıs */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +234,9 @@
 				B83C585F2A142BC10077BAD8 /* DataManager.swift in Sources */,
 				B83C58482A13CC540077BAD8 /* Chest+CoreDataClass.swift in Sources */,
 				B83C58492A13CC540077BAD8 /* Chest+CoreDataProperties.swift in Sources */,
+				B83969E72A163D9A00E77ACE /* NavigationAndTabBarHelper.swift in Sources */,
+				B83969E52A163C2D00E77ACE /* Ext+UIColor.swift in Sources */,
+				B83969E32A16373A00E77ACE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,15 +380,19 @@
 				INFOPLIST_FILE = SelectionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.emoooqwe.SelectionApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "emobabo.28May-s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,15 +411,19 @@
 				INFOPLIST_FILE = SelectionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.emoooqwe.SelectionApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "emobabo.28May-s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,7 +433,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B83C58272A13CBCE0077BAD8 /* Build configuration list for PBXProject "Selection" */ = {
+		B83C58272A13CBCE0077BAD8 /* Build configuration list for PBXProject "28Mayıs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B83C58412A13CBD00077BAD8 /* Debug */,
@@ -414,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B83C58432A13CBD00077BAD8 /* Build configuration list for PBXNativeTarget "Selection" */ = {
+		B83C58432A13CBD00077BAD8 /* Build configuration list for PBXNativeTarget "28Mayıs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B83C58442A13CBD00077BAD8 /* Debug */,
