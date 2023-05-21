@@ -13,7 +13,7 @@ class DenetimVC: UIViewController {
     let tutanakButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Tutanak Sorgula", for: .normal)
+        button.setTitle("Tutanak Sorgulama Sitesine Git", for: .normal)
         button.configuration = .filled()
         button.configuration?.baseBackgroundColor = Constant.appColor
         button.configuration?.baseForegroundColor = .white
@@ -24,7 +24,7 @@ class DenetimVC: UIViewController {
     let sandıkButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Sandık Takip Sistemi", for: .normal)
+        button.setTitle("Sandık Takip Sistemi Sitesine Git", for: .normal)
         button.configuration = .filled()
         button.configuration?.baseBackgroundColor = Constant.appColor
         button.configuration?.baseForegroundColor = .white

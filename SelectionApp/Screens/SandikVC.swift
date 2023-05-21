@@ -168,7 +168,7 @@ class SandikVC: UIViewController {
     }
     
     private func configureMinusButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.badge.minus.fill"), style: .done, target: self, action: #selector(minusButtonPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Oy Eksilt", style: .done, target: self, action: #selector(minusButtonPressed))
     }
     
     @objc private func minusButtonPressed() {
