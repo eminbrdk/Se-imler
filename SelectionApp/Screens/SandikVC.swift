@@ -8,8 +8,15 @@ class SandikVC: UIViewController {
     let kkImage = UIImageView()
     let rteButton = UIButton()
     let kkButton = UIButton()
+    
+    let rteStackView = UIStackView()
+    let rteMinusButton = UIButton()
     let rteCount = UILabel()
+    
+    let kkStackView = UIStackView()
+    let kkMinusButton = UIButton()
     let kkCount = UILabel()
+    
     let rtePercantage = UILabel()
     let kkPercantage = UILabel()
     
@@ -19,13 +26,14 @@ class SandikVC: UIViewController {
         configureView()
         configureImages()
         configureButtons()
-        configureLabels()
-        configureMinusButton()
+        configureVoteViews()
     }
 
     private func configureView() {
         view.backgroundColor = Constant.backgroundColor
     }
+    
+// MARK: - Images
     
     private func configureImages() {
         let imageWidth: CGFloat = (view.width - 60) / 2
@@ -53,6 +61,8 @@ class SandikVC: UIViewController {
             kkImage.leadingAnchor.constraint(equalTo: rteImage.trailingAnchor, constant: 20)
         ])
     }
+    
+// MARK: - Buttons
     
     private func configureButtons() {
         let buttonWidth: CGFloat = (view.width - 60) / 2
@@ -104,22 +114,55 @@ class SandikVC: UIViewController {
         changePercantage()
     }
     
-    private func configureLabels() {
-        let labelWidth: CGFloat = (view.width - 60) / 2
+// MARK: - VoteViews
+    
+    private func configureVoteViews() {
+        let contentWidth: CGFloat = (view.width - 60) / 2
+        
+        for stack in [rteStackView, kkStackView] {
+            view.addSubview(stack)
+            stack.translatesAutoresizingMaskIntoConstraints =  false
+            stack.axis = .horizontal
+            stack.spacing = 0
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                stack.widthAnchor.constraint(equalToConstant: contentWidth),
+                stack.heightAnchor.constraint(equalToConstant: 50),
+                stack.topAnchor.constraint(equalTo: rteImage.bottomAnchor, constant: 20)
+            ])
+        }
+        NSLayoutConstraint.activate([
+            rteStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            kkStackView.leadingAnchor.constraint(equalTo: rteStackView.trailingAnchor, constant: 20)
+        ])
+        rteStackView.addArrangedSubview(rteMinusButton)
+        rteStackView.addArrangedSubview(rteCount)
+        kkStackView.addArrangedSubview(kkMinusButton)
+        kkStackView.addArrangedSubview(kkCount)
+        
+        for button in [rteMinusButton, kkMinusButton] {
+            button.configuration = .filled()
+            button.configuration?.image = UIImage(systemName: "person.fill.badge.minus")
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.configuration?.baseForegroundColor = .white
+            
+            NSLayoutConstraint.activate([
+                button.heightAnchor.constraint(equalToConstant: 50),
+                button.widthAnchor.constraint(equalToConstant: 50)
+            ])
+        }
+        rteMinusButton.configuration?.baseBackgroundColor = Constant.rteColor
+        kkMinusButton.configuration?.baseBackgroundColor = Constant.kkColor
+        rteMinusButton.addTarget(self, action: #selector(rteMinusButtonPressed), for: .touchUpInside)
+        kkMinusButton.addTarget(self, action: #selector(kkMinusButtonPressed), for: .touchUpInside)
         
         for label in [rteCount, kkCount] {
-            view.addSubview(label)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            
             label.font = UIFont.systemFont(ofSize: 27, weight: .bold)
             label.numberOfLines = 1
             label.textAlignment = .center
-            
-            NSLayoutConstraint.activate([
-                label.widthAnchor.constraint(equalToConstant: labelWidth),
-                label.heightAnchor.constraint(equalToConstant: 50),
-                label.topAnchor.constraint(equalTo: rteImage.bottomAnchor, constant: 20)
-            ])
         }
         
         for label in [rtePercantage, kkPercantage] {
@@ -131,9 +174,9 @@ class SandikVC: UIViewController {
             label.textAlignment = .center
             
             NSLayoutConstraint.activate([
-                label.widthAnchor.constraint(equalToConstant: labelWidth),
+                label.widthAnchor.constraint(equalToConstant: contentWidth),
                 label.heightAnchor.constraint(equalToConstant: 50),
-                label.topAnchor.constraint(equalTo: rteCount.bottomAnchor, constant: 20)
+                label.topAnchor.constraint(equalTo: rteStackView.bottomAnchor, constant: 20)
             ])
         }
         
@@ -147,9 +190,6 @@ class SandikVC: UIViewController {
         changePercantage()
         
         NSLayoutConstraint.activate([
-            rteCount.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            kkCount.leadingAnchor.constraint(equalTo: rteCount.trailingAnchor, constant: 20),
-            
             rtePercantage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             kkPercantage.leadingAnchor.constraint(equalTo: rtePercantage.trailingAnchor, constant: 20),
         ])
@@ -167,28 +207,29 @@ class SandikVC: UIViewController {
         }
     }
     
-    private func configureMinusButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Oy Eksilt", style: .done, target: self, action: #selector(minusButtonPressed))
-    }
-    
-    @objc private func minusButtonPressed() {
-        let alert = UIAlertController(title: "Oy Eksilt", message: "Lütfen 1 oy eksiltmek istediğiniz adayı seçin", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Recep Tayyip Erdoğan", style: .default, handler: { [weak self] _ in
+    @objc private func rteMinusButtonPressed() {
+        let alert = UIAlertController(title: "Oy Eksilt", message: "Recep Tayyip Erdoğan'ın oyunu eksiltmek istediğinize emin misiniz?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Oy Eksilt", style: .default, handler: { [weak self] _ in
             guard let self else { return }
             self.chest.rteCount -= 1
             self.rteCount.text = String(chest.rteCount)
             DataManager.shared.save()
             changePercantage()
         }))
-        alert.addAction(UIAlertAction(title: "Kemal Kılıçtaroğlu", style: .default, handler: { [weak self] _ in
+        present(alert, animated: true)
+    }
+    
+    @objc private func kkMinusButtonPressed() {
+        let alert = UIAlertController(title: "Oy Eksilt", message: "Kemal Kılıçdaroğlu'nun oyunu eksiltmek istediğinize emin misiniz?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Oy Eksilt", style: .default, handler: { [weak self] _ in
             guard let self else { return }
             self.chest.kkCount -= 1
             self.kkCount.text = String(chest.kkCount)
             DataManager.shared.save()
             changePercantage()
         }))
-        alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
-        
         present(alert, animated: true)
     }
 }

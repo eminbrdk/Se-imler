@@ -1,11 +1,11 @@
 import UIKit
 
-class Sand_kCell: UITableViewCell {
+class ChestCell: UITableViewCell {
 
-    static let reuseID = "SandıkCell"
+    static let reuseID = "ChestCell"
     let chestName: UILabel = {
        let label = UILabel()
-        label.textColor = .white
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
@@ -23,14 +23,13 @@ class Sand_kCell: UITableViewCell {
     }
     
     func set(text: String) {
-        chestName.text = text
+        chestName.text = "Sandık Numarası: \(text)"
     }
     
     private func configure() {
         addSubview(chestName)
-        backgroundColor = .black
         selectionStyle = .none
-        
+        backgroundColor = Constant.backgroundColor
         
         NSLayoutConstraint.activate([
             chestName.centerYAnchor.constraint(equalTo: centerYAnchor),

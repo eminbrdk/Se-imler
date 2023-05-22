@@ -16,7 +16,7 @@ class DataManager {
         do {
             try context.save()
         } catch {
-            print("update user name hatası")
+            return
         }
     }
     
@@ -38,7 +38,7 @@ class DataManager {
         do {
             try self.context.save()
         } catch {
-            print("create user hatası")
+            return
         }
     }
     

@@ -70,12 +70,24 @@ class DenetimVC: UIViewController {
     }
 
     @objc private func tutanakButtonPressed() {
-        guard let url = URL(string: "http://tutanak.oyveotesi.org") else { return }
-        presentSafariVC(with: url)
+        let alert = UIAlertController(title: "Oy ve Ötesi", message: "Oy ve ötesi web sitesine gitmek istediğinize emin misiniz?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Evet", style: .default, handler: { [weak self] _ in
+            guard let self, let url = URL(string: "http://tutanak.oyveotesi.org") else { return }
+            self.presentSafariVC(with: url)
+        }))
+        
+        present(alert, animated: true)
     }
     
     @objc private func sandıkButtonPressed() {
-        guard let url = URL(string: "http://sts.chp.org.tr/") else { return }
-        presentSafariVC(with: url)
+        let alert = UIAlertController(title: "Sandık Takip Sistemi", message: "Sandık Takip Sistemi web sitesine gitmek istediğinize emin misiniz?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Evet", style: .default, handler: { [weak self] _ in
+            guard let self, let url = URL(string: "http://sts.chp.org.tr/") else { return }
+            presentSafariVC(with: url)
+        }))
+        
+        present(alert, animated: true)
     }
 }

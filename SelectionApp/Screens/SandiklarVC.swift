@@ -16,6 +16,27 @@ class SandiklarVC: UIViewController {
     
     func getChestsData() {
         chests = DataManager.shared.getAllChestsData()
+        
+        if chests.isEmpty == true {
+            let alert = UIAlertController(title: "Sandık Ekle", message: "Lütfen sayım yapacağınız sandığın numarasını giriniz", preferredStyle: .alert)
+            
+            alert.addTextField()
+            alert.textFields?.first?.keyboardType = .numberPad
+            
+            alert.addAction(UIAlertAction(title: "Ekle", style: .default, handler: { [weak self] _ in
+                guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else { return }
+
+                DataManager.shared.createChest(number: text)
+                DataManager.shared.save()
+                self.getChestsData()
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }))
+
+            present(alert, animated: true)
+        }
     }
     
     private func configureView() {
@@ -34,11 +55,11 @@ class SandiklarVC: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = 60
         tableView.separatorColor = .darkGray
-        tableView.register(Sand_kCell.self, forCellReuseIdentifier: Sand_kCell.reuseID)
+        tableView.register(ChestCell.self, forCellReuseIdentifier: ChestCell.reuseID)
     }
 
     @objc private func buttonPressed() {
-        let alert = UIAlertController(title: "Sandık Ekle", message: "Eklemek istediğiniz sandığın numarasını giriniz", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Sandık Ekle", message: "Lütfen sayım yapacağınız sandığın numarasını giriniz", preferredStyle: .alert)
         
         alert.addTextField()
         alert.textFields?.first?.keyboardType = .numberPad
@@ -67,7 +88,7 @@ extension SandiklarVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Sand_kCell.reuseID) as! Sand_kCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChestCell.reuseID) as! ChestCell
         let chest = chests[indexPath.row]
         cell.set(text: chest.chestNumber!)
         return cell

@@ -12,8 +12,8 @@ struct NavigationAndTabBarHelper {
     static func configureNavigationController() {
         UINavigationBar.appearance().barTintColor = Constant.backgroundColor
         UINavigationBar.appearance().tintColor = Constant.appColor
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        //UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        //UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
     
     static func configureTabbarController() {
