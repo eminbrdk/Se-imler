@@ -11,24 +11,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
-        window?.rootViewController = createTBC()
+        window?.rootViewController = createNavigationController()
     }
     
-    private func createTBC() -> UITabBarController {
-        let tb = UITabBarController()
-        let nc1 = createNC()
-        let nc2 = UINavigationController(rootViewController: DenetimVC())
-        nc2.navigationBar.prefersLargeTitles = true
-        nc2.navigationItem.largeTitleDisplayMode = .always
-        
-        nc1.tabBarItem = UITabBarItem(title: "Sandık", image: UIImage(systemName: "archivebox.circle"), tag: 0)
-        nc2.tabBarItem = UITabBarItem(title: "Denetleme", image: UIImage(systemName: "magnifyingglass.circle"), tag: 1)
-        tb.viewControllers = [nc1, nc2]
-        return tb
-    }
-    
-    private func createNC() -> UINavigationController {
-        let vc = SandiklarVC()
+    private func createNavigationController() -> UINavigationController {
+        let vc = ChestsVC()
         let nc = UINavigationController(rootViewController: vc)
         nc.navigationBar.prefersLargeTitles = true
         nc.navigationItem.largeTitleDisplayMode = .always

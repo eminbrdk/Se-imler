@@ -3,6 +3,7 @@ import UIKit
 class ChestCell: UITableViewCell {
 
     static let reuseID = "ChestCell"
+    
     let chestName: UILabel = {
        let label = UILabel()
         label.textColor = .label

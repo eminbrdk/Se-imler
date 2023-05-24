@@ -1,6 +1,6 @@
 import UIKit
 
-class SandiklarVC: UIViewController {
+class ChestsVC: UIViewController {
 
     var chests: [Chest] = []
     
@@ -14,7 +14,7 @@ class SandiklarVC: UIViewController {
         configureTableView()
     }
     
-    func getChestsData() {
+    private func getChestsData() {
         chests = DataManager.shared.getAllChestsData()
         
         if chests.isEmpty == true {
@@ -24,7 +24,10 @@ class SandiklarVC: UIViewController {
             alert.textFields?.first?.keyboardType = .numberPad
             
             alert.addAction(UIAlertAction(title: "Ekle", style: .default, handler: { [weak self] _ in
-                guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else { return }
+                guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else {
+                    self?.getChestsData()
+                    return
+                }
 
                 DataManager.shared.createChest(number: text)
                 DataManager.shared.save()
@@ -66,7 +69,10 @@ class SandiklarVC: UIViewController {
         
         alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
         alert.addAction(UIAlertAction(title: "Ekle", style: .default, handler: { [weak self] _ in
-            guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else { return }
+            guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else {
+                self?.buttonPressed()
+                return
+            }
 
             DataManager.shared.createChest(number: text)
             DataManager.shared.save()
@@ -81,7 +87,7 @@ class SandiklarVC: UIViewController {
     }
 }
 
-extension SandiklarVC: UITableViewDelegate, UITableViewDataSource {
+extension ChestsVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chests.count
@@ -97,7 +103,7 @@ extension SandiklarVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chest = chests[indexPath.row]
 
-        let vc = SandikVC()
+        let vc = ChestVC()
         vc.chest = chest
         vc.title = "Sandık No: \(chest.chestNumber!)"
         self.navigationController?.pushViewController(vc, animated: true)

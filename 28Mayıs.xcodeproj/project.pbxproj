@@ -18,11 +18,11 @@
 		B83C58482A13CC540077BAD8 /* Chest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58462A13CC540077BAD8 /* Chest+CoreDataClass.swift */; };
 		B83C58492A13CC540077BAD8 /* Chest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58472A13CC540077BAD8 /* Chest+CoreDataProperties.swift */; };
 		B83C584B2A13CC850077BAD8 /* Ext+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C584A2A13CC850077BAD8 /* Ext+UIView.swift */; };
-		B83C584D2A13CCA40077BAD8 /* SandıkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C584C2A13CCA40077BAD8 /* SandıkCell.swift */; };
-		B83C58522A13CD130077BAD8 /* SandiklarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58512A13CD130077BAD8 /* SandiklarVC.swift */; };
-		B83C58542A13CE6F0077BAD8 /* SandikVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58532A13CE6F0077BAD8 /* SandikVC.swift */; };
-		B83C58562A13EC840077BAD8 /* DenetimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58552A13EC840077BAD8 /* DenetimVC.swift */; };
+		B83C584D2A13CCA40077BAD8 /* ChestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C584C2A13CCA40077BAD8 /* ChestCell.swift */; };
+		B83C58522A13CD130077BAD8 /* ChestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58512A13CD130077BAD8 /* ChestsVC.swift */; };
+		B83C58542A13CE6F0077BAD8 /* ChestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58532A13CE6F0077BAD8 /* ChestVC.swift */; };
 		B83C585F2A142BC10077BAD8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C585E2A142BC10077BAD8 /* DataManager.swift */; };
+		B8EDAB872A1E6448000A4F57 /* NoChestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EDAB862A1E6448000A4F57 /* NoChestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +39,11 @@
 		B83C58462A13CC540077BAD8 /* Chest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chest+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B83C58472A13CC540077BAD8 /* Chest+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chest+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B83C584A2A13CC850077BAD8 /* Ext+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIView.swift"; sourceTree = "<group>"; };
-		B83C584C2A13CCA40077BAD8 /* SandıkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandıkCell.swift"; sourceTree = "<group>"; };
-		B83C58512A13CD130077BAD8 /* SandiklarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandiklarVC.swift; sourceTree = "<group>"; };
-		B83C58532A13CE6F0077BAD8 /* SandikVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandikVC.swift; sourceTree = "<group>"; };
-		B83C58552A13EC840077BAD8 /* DenetimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenetimVC.swift; sourceTree = "<group>"; };
+		B83C584C2A13CCA40077BAD8 /* ChestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestCell.swift; sourceTree = "<group>"; };
+		B83C58512A13CD130077BAD8 /* ChestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestsVC.swift; sourceTree = "<group>"; };
+		B83C58532A13CE6F0077BAD8 /* ChestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestVC.swift; sourceTree = "<group>"; };
 		B83C585E2A142BC10077BAD8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B8EDAB862A1E6448000A4F57 /* NoChestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoChestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +101,8 @@
 		B83C58572A142B2C0077BAD8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B83C58512A13CD130077BAD8 /* SandiklarVC.swift */,
-				B83C58532A13CE6F0077BAD8 /* SandikVC.swift */,
-				B83C58552A13EC840077BAD8 /* DenetimVC.swift */,
+				B83C58512A13CD130077BAD8 /* ChestsVC.swift */,
+				B83C58532A13CE6F0077BAD8 /* ChestVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -111,7 +110,8 @@
 		B83C58582A142B3A0077BAD8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				B83C584C2A13CCA40077BAD8 /* SandıkCell.swift */,
+				B83C584C2A13CCA40077BAD8 /* ChestCell.swift */,
+				B8EDAB862A1E6448000A4F57 /* NoChestView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -223,14 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B83C58542A13CE6F0077BAD8 /* SandikVC.swift in Sources */,
+				B83C58542A13CE6F0077BAD8 /* ChestVC.swift in Sources */,
 				B83C583A2A13CBCE0077BAD8 /* SelectionApp.xcdatamodeld in Sources */,
 				B83C584B2A13CC850077BAD8 /* Ext+UIView.swift in Sources */,
-				B83C58562A13EC840077BAD8 /* DenetimVC.swift in Sources */,
 				B83C58302A13CBCE0077BAD8 /* AppDelegate.swift in Sources */,
 				B83C58322A13CBCE0077BAD8 /* SceneDelegate.swift in Sources */,
-				B83C584D2A13CCA40077BAD8 /* SandıkCell.swift in Sources */,
-				B83C58522A13CD130077BAD8 /* SandiklarVC.swift in Sources */,
+				B83C584D2A13CCA40077BAD8 /* ChestCell.swift in Sources */,
+				B83C58522A13CD130077BAD8 /* ChestsVC.swift in Sources */,
+				B8EDAB872A1E6448000A4F57 /* NoChestView.swift in Sources */,
 				B83C585F2A142BC10077BAD8 /* DataManager.swift in Sources */,
 				B83C58482A13CC540077BAD8 /* Chest+CoreDataClass.swift in Sources */,
 				B83C58492A13CC540077BAD8 /* Chest+CoreDataProperties.swift in Sources */,

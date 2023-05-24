@@ -1,6 +1,6 @@
 import UIKit
 
-class SandikVC: UIViewController {
+class ChestVC: UIViewController {
 
     var chest: Chest!
     
@@ -62,7 +62,7 @@ class SandikVC: UIViewController {
         ])
     }
     
-// MARK: - Buttons
+// MARK: - Plus Buttons
     
     private func configureButtons() {
         let buttonWidth: CGFloat = (view.width - 60) / 2
