@@ -16,30 +16,6 @@ class ChestsVC: UIViewController {
     
     private func getChestsData() {
         chests = DataManager.shared.getAllChestsData()
-        
-        if chests.isEmpty == true {
-            let alert = UIAlertController(title: "Sandık Ekle", message: "Lütfen sayım yapacağınız sandığın numarasını giriniz", preferredStyle: .alert)
-            
-            alert.addTextField()
-            alert.textFields?.first?.keyboardType = .numberPad
-            
-            alert.addAction(UIAlertAction(title: "Ekle", style: .default, handler: { [weak self] _ in
-                guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else {
-                    self?.getChestsData()
-                    return
-                }
-
-                DataManager.shared.createChest(number: text)
-                DataManager.shared.save()
-                self.getChestsData()
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }))
-
-            present(alert, animated: true)
-        }
     }
     
     private func configureView() {
@@ -69,10 +45,7 @@ class ChestsVC: UIViewController {
         
         alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
         alert.addAction(UIAlertAction(title: "Ekle", style: .default, handler: { [weak self] _ in
-            guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else {
-                self?.buttonPressed()
-                return
-            }
+            guard let field = alert.textFields!.first, let text = field.text, !text.isEmpty, let self else { return }
 
             DataManager.shared.createChest(number: text)
             DataManager.shared.save()
