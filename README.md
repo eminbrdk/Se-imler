@@ -4,7 +4,7 @@
 # Kullandıklarım
 Table View
 <p> Core Data </p>
-<p> UIKit </p>
+<p> Programmatic UI </p>
 <p> Safari Servies </p>
 
 # Ekran Videosu
