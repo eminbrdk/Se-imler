@@ -109,14 +109,10 @@ class WelcomeVC: UIViewController {
     }
     
     private func goChestsVC() {
-        let vc = ChestsVC()
-        let nc = UINavigationController(rootViewController: vc)
+        let tbc = SceneDelegate().createTabBarController()
         
-        nc.navigationBar.prefersLargeTitles = true
-        nc.navigationItem.largeTitleDisplayMode = .always
-        
-        nc.modalPresentationStyle = .fullScreen
-        nc.modalTransitionStyle = .coverVertical
-        present(nc, animated: true)
+        tbc.modalPresentationStyle = .fullScreen
+        tbc.modalTransitionStyle = .coverVertical
+        present(tbc, animated: true)
     }
 }

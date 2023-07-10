@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = (DataManager.shared.getAllChestsData() == []) ? WelcomeVC() : createTabBarController()
     }
     
-    private func createTabBarController() -> UITabBarController {
+    func createTabBarController() -> UITabBarController {
         let vc = ChestsVC()
         let nc = UINavigationController(rootViewController: vc)
         nc.navigationBar.prefersLargeTitles = true
