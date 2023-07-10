@@ -23,6 +23,7 @@
 		B83C58522A13CD130077BAD8 /* ChestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58512A13CD130077BAD8 /* ChestsVC.swift */; };
 		B83C58542A13CE6F0077BAD8 /* ChestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C58532A13CE6F0077BAD8 /* ChestVC.swift */; };
 		B83C585F2A142BC10077BAD8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C585E2A142BC10077BAD8 /* DataManager.swift */; };
+		B8B5DA262A5C198600D87841 /* CheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5DA252A5C198600D87841 /* CheckVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B83C58512A13CD130077BAD8 /* ChestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestsVC.swift; sourceTree = "<group>"; };
 		B83C58532A13CE6F0077BAD8 /* ChestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestVC.swift; sourceTree = "<group>"; };
 		B83C585E2A142BC10077BAD8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B8B5DA252A5C198600D87841 /* CheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				B83C58512A13CD130077BAD8 /* ChestsVC.swift */,
 				B83C58532A13CE6F0077BAD8 /* ChestVC.swift */,
 				B80307872A20C56C000EACC9 /* WelcomeVC.swift */,
+				B8B5DA252A5C198600D87841 /* CheckVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				B83C584D2A13CCA40077BAD8 /* ChestCell.swift in Sources */,
 				B83C58522A13CD130077BAD8 /* ChestsVC.swift in Sources */,
 				B83C585F2A142BC10077BAD8 /* DataManager.swift in Sources */,
+				B8B5DA262A5C198600D87841 /* CheckVC.swift in Sources */,
 				B83C58482A13CC540077BAD8 /* Chest+CoreDataClass.swift in Sources */,
 				B83C58492A13CC540077BAD8 /* Chest+CoreDataProperties.swift in Sources */,
 				B83969E72A163D9A00E77ACE /* NavigationAndTabBarHelper.swift in Sources */,

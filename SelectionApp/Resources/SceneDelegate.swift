@@ -11,15 +11,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
-        window?.rootViewController = (DataManager.shared.getAllChestsData() == []) ? WelcomeVC() : createNavigationController()
+        window?.rootViewController = (DataManager.shared.getAllChestsData() == []) ? WelcomeVC() : createTabBarController()
     }
     
-    private func createNavigationController() -> UINavigationController {
+    private func createTabBarController() -> UITabBarController {
         let vc = ChestsVC()
         let nc = UINavigationController(rootViewController: vc)
         nc.navigationBar.prefersLargeTitles = true
         nc.navigationItem.largeTitleDisplayMode = .always
-        return nc
+        nc.tabBarItem = UITabBarItem(title: "Sandıklar", image: UIImage(systemName: "archivebox"), tag: 0)
+        
+        let vc2 = CheckVC()
+        let nc2 = UINavigationController(rootViewController: vc2)
+        nc2.navigationBar.prefersLargeTitles = true
+        nc2.navigationItem.largeTitleDisplayMode = .always
+        nc2.tabBarItem = UITabBarItem(title: "Denetleme", image: UIImage(systemName: "checkmark.circle"), tag: 1)
+        
+        let tbc = UITabBarController()
+        tbc.viewControllers = [nc, nc2]
+        
+        return tbc
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
